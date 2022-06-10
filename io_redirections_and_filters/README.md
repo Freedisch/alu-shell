@@ -1,1 +1,1 @@
-Let's go for another round with shell permissions this time
+Let's go for another round with shell directions this time
