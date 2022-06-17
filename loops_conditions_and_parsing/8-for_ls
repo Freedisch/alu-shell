@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+#Display all the file in . without -
+for file in *
+do
+	file=${file#*-}
+	echo "$file"
+done
