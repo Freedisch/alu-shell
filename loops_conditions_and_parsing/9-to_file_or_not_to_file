@@ -7,13 +7,11 @@ if [ -e "$file" ]; then
 	#check is the file is a regular or not
 	if [ -f "$file" ]; then
 		echo "school is a regular file"
-	else
-	#checking file's size
-		if [ -s "$file" ]; then
-                        echo "school file is not empty"
-                else
-                        echo "school file is empty"
-                fi
+			if [ -s "$file" ]; then
+                        	echo "school file is not empty"
+                	else
+                        	echo "school file is empty"
+                	fi
 	fi
 else
 	echo "school file does not exist"
