@@ -7,15 +7,15 @@ do
 	
 		4)
 			echo "$counter"
-			echo "bad luck in China"
+			echo "bad luck from China"
 			;;
 		9)
 			echo "$counter"
-			echo "bad luck in Japan"
+			echo "bad luck from Japan"
 			;;
 		17)
 			echo "$counter"
-			echo "bad luck in Italy"
+			echo "bad luck from Italy"
 			;;
 		*)
 			echo "$counter"
