@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #Best school 10x 9th hi
 counter=1
 while ((counter<=10))
