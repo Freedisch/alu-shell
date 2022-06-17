@@ -3,6 +3,7 @@
 file="school"
 #Check if the file exist or not
 if [ -e "$file" ]; then
+	echo "school file exists"
 	#check is the file is a regular or not
 	if [ -f "$file" ]; then
 		echo "school is a regular file"
