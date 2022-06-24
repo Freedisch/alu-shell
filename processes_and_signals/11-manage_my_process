@@ -1,37 +1,34 @@
 #!/usr/bin/env bash
 #BrainFuck program 
-function startup(){
-	bash ./manage_my_process &
-	echo "$!" > /var/run/my_process.pid
+./lib/lsb/init-functions
+
+TestFile=/var/run/my_process.pid
+
+start() {
+    ./manage_my_process &
+    echo "$!" > "$TestFile"
 }
-function stopnow(){
-	[ -e "/var/run/my_process.pid" ] && pkill -f './manage_my_process' && rm/var/run/my_process.pid
+
+stop() {
+    sudo kill -15 "$(cat "$TestFile")" && rm -f "$TestFile"
 }
-function restartnow(){
-	stopnow
-	startup
-	echo "manage_my_process restsrted"
-}
-if [ $# -eq 1 ]
-then
-	COUNTER="$1"
-	case $COUNTER in
-		"start")
-			startup
-			echo "manage_my_process started"
-			;;
-		"stop")
-			#stopnow
-			[ -e "/var/run/my_process.pid" ] && pkill -f './manage_my_process' && rm /var/run/my_process.pid
-			echo "manage_my_process stopped"
-			;;
-		"restart")
-			restartnow
-			;;
-		*)
-			echo "Usage: manage_my_process {start|stop|restart}"
-			;;
-	esac
-else
-	echo "Usage: manage_my_process {start|stop|restart}"
-fi
+
+case "$1" in 
+    start)
+       start
+       echo "manage_my_process started"
+       ;;
+    stop)
+       stop
+       echo "manage_my_process stopped"
+       ;;
+    restart)
+       stop
+       start
+       echo "manage_my_process restarted"
+       ;;
+    *)
+       echo "Usage: manage_my_process {start|stop|restart}"
+esac
+
+exit 0
