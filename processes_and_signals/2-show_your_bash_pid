@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#grep to catch the key word
+ps auxf | grep "bash"
