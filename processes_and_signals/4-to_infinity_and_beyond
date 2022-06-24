@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #Boolean loop
 while true:
+echo "To infinity and beyond"
 do
-	echo "To infinity and beyond"
-	sleep 2
+sleep 2
 done
