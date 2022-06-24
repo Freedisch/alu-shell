@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 #Highlander like the car
-while :
+while true
 do
-	echo 'To infinity and beyond'
+	echo "To infinity and beyond"
 	sleep 2
-	trap "echo Iam invincible!!!; exit" SIGTERM
+	trap 'echo Iam invincible!!!; exit' SIGTERM
 done
